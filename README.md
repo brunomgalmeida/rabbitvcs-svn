@@ -1,4 +1,4 @@
-# SVN package
+# Atom Rabbit VCS SVN package
 
 Requires:
    rabbitvcs
