@@ -1,0 +1,28 @@
+{
+  "name": "rabbitvcs-svn",
+  "main": "./lib/rabbitvcs-svn",
+  "version": "0.4.2",
+  "description": "An Atom Plugin for RabbitVCS frontend",
+  "activationCommands": {
+    "atom-workspace": [
+      "SVN:blameFromTreeView",
+      "SVN:blameFromEditor",
+      "SVN:commitFromTreeView",
+      "SVN:commitFromEditor",
+      "SVN:diffFromTreeView",
+      "SVN:diffFromEditor",
+      "SVN:logFromTreeView",
+      "SVN:logFromEditor",
+      "SVN:revertFromTreeView",
+      "SVN:revertFromEditor",
+      "SVN:updateFromTreeView",
+      "SVN:updateFromEditor"
+    ]
+  },
+  "repository": "https://github.com/brunomgalmeida/rabbitvcs-svn",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,86 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+"context-menu":
+  "atom-text-editor": [
+    {
+      "label": "SVN"
+      "submenu": [
+        {
+          "label": "Commit"
+          "command": "SVN:commitFromEditor"
+        }
+        {
+          "label": "Diff"
+          "command": "SVN:diffFromEditor"
+        }
+        {
+          "label": "Log"
+          "command": "SVN:logFromEditor"
+        }
+        {
+          "label": "Revert"
+          "command": "SVN:revertFromEditor"
+        }
+        {
+          "label": "Update"
+          "command": "SVN:updateFromEditor"
+        }
+      ]
+    }
+  ],
+  ".tree-view": [
+    {
+      "label": "SVN",
+      "submenu": [
+        {
+          "label": "Commit"
+          "command": "SVN:commitFromTreeView"
+        }
+        {
+          "label": "Diff"
+          "command": "SVN:diffFromTreeView"
+        }
+        {
+          "label": "Log"
+          "command": "SVN:logFromTreeView"
+        }
+        {
+          "label": "Revert"
+          "command": "SVN:revertFromTreeView"
+        }
+        {
+          "label": "Update"
+          "command": "SVN:updateFromTreeView"
+        }
+      ]
+    }
+  ]
+"menu": [
+  {
+    "label": "Packages"
+    "submenu": [
+      "label": "SVN"
+      "submenu": [
+        {
+          "label": "Commit"
+          "command": "SVN:commitFromEditor"
+        }
+        {
+          "label": "Diff"
+          "command": "SVN:diffFromEditor"
+        }
+        {
+          "label": "Log"
+          "command": "SVN:logFromEditor"
+        }
+        {
+          "label": "Revert"
+          "command": "SVN:revertFromEditor"
+        }
+        {
+          "label": "Update"
+          "command": "SVN:updateFromEditor"
+        }
+      ]
+    ]
+  }
+]
