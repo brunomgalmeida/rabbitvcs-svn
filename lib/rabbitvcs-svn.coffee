@@ -72,6 +72,7 @@ module.exports = SVN =
 
     atom.commands.add "atom-workspace", "SVN:commitFromTreeView": => @commitFromTreeView()
     atom.commands.add "atom-workspace", "SVN:commitFromEditor": => @commitFromEditor()
+    atom.commands.add "atom-workspace", "SVN:commitProject": => @commitProject()
 
     atom.commands.add "atom-workspace", "SVN:diffFromTreeView": => @diffFromTreeView()
     atom.commands.add "atom-workspace", "SVN:diffFromEditor": => @diffFromEditor()
@@ -84,6 +85,7 @@ module.exports = SVN =
 
     atom.commands.add "atom-workspace", "SVN:updateFromTreeView": => @updateFromTreeView()
     atom.commands.add "atom-workspace", "SVN:updateFromEditor": => @updateFromEditor()
+    atom.commands.add "atom-workspace", "SVN:updateProject": => @updateProject()
 
   #blameFromTreeView: ->
   #  currFile = resolveTreeSelection()
@@ -95,6 +97,10 @@ module.exports = SVN =
 
   commitFromTreeView: ->
     currFile = resolveTreeSelection()
+    commit(currFile) if currFile?
+
+  commitProject: ->
+    currFile = atom.project.getPaths()[0]
     commit(currFile) if currFile?
 
   commitFromEditor: ->
@@ -131,4 +137,8 @@ module.exports = SVN =
 
   updateFromEditor: ->
     currFile = resolveEditorFile()
+    update(currFile) if currFile?
+
+  updateProject: ->
+    currFile = atom.project.getPaths()[0]
     update(currFile) if currFile?
