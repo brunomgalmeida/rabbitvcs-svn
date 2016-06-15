@@ -1,11 +1,11 @@
-RabbitCVS = require '../lib/SVN'
+RabbitVCS = require '../lib/SVN'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "RabbitCVS", ->
+describe "RabbitVCS", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
@@ -28,13 +28,13 @@ describe "RabbitCVS", ->
       runs ->
         expect(workspaceElement.querySelector('.SVN')).toExist()
 
-        rabbitCVSElement = workspaceElement.querySelector('.SVN')
-        expect(rabbitCVSElement).toExist()
+        rabbitVCSElement = workspaceElement.querySelector('.SVN')
+        expect(rabbitVCSElement).toExist()
 
-        rabbitCVSPanel = atom.workspace.panelForItem(rabbitCVSElement)
-        expect(rabbitCVSPanel.isVisible()).toBe true
+        rabbitVCSPanel = atom.workspace.panelForItem(rabbitVCSElement)
+        expect(rabbitVCSPanel.isVisible()).toBe true
         atom.commands.dispatch workspaceElement, 'SVN:toggle'
-        expect(rabbitCVSPanel.isVisible()).toBe false
+        expect(rabbitVCSPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
       # This test shows you an integration test testing at the view level.
@@ -56,7 +56,7 @@ describe "RabbitCVS", ->
 
       runs ->
         # Now we can test for view visibility
-        rabbitCVSElement = workspaceElement.querySelector('.SVN')
-        expect(rabbitCVSElement).toBeVisible()
+        rabbitVCSElement = workspaceElement.querySelector('.SVN')
+        expect(rabbitVCSElement).toBeVisible()
         atom.commands.dispatch workspaceElement, 'SVN:toggle'
-        expect(rabbitCVSElement).not.toBeVisible()
+        expect(rabbitVCSElement).not.toBeVisible()

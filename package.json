@@ -1,7 +1,7 @@
 {
   "name": "rabbitvcs-svn",
   "main": "./lib/rabbitvcs-svn",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An Atom Plugin for RabbitVCS frontend",
   "activationCommands": {
     "atom-workspace": [
@@ -15,6 +15,10 @@
       "SVN:logFromEditor",
       "SVN:revertFromTreeView",
       "SVN:revertFromEditor",
+      "SVN:addFromTreeView",
+      "SVN:addFromEditor",
+      "SVN:renameFromTreeView",
+      "SVN:renameFromEditor",
       "SVN:updateFromTreeView",
       "SVN:updateFromEditor"
     ]

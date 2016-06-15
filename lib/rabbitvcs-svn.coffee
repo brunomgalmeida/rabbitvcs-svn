@@ -1,7 +1,7 @@
 {CompositeDisposable} = require "atom"
 path = require "path"
 
-RabbitCSVSvn = (args, cwd) ->
+RabbitVCSSvn = (args, cwd) ->
   spawn = require("child_process").spawn
   #command = atom.config.get("SVN.rabbitvcsPath") + "/rabbitvcs"
   command = "/usr/bin/rabbitvcs"
@@ -35,23 +35,29 @@ blame = (currFile)->
   args = [ "blame", currFile ]
   #args.push("/startrev:1", "/endrev:-1") if atom.config.get("SVN.tortoiseBlameAll")
   #Not Yet Working
-  #RabbitCSVSvn(args, path.dirname(currFile))
+  #RabbitVCSSvn(args, path.dirname(currFile))
 
 commit = (currFile)->
-  RabbitCSVSvn(["commit", currFile], path.dirname(currFile))
+  RabbitVCSSvn(["commit", currFile], path.dirname(currFile))
 
 diff = (currFile)->
-  RabbitCSVSvn(["diff", currFile], path.dirname(currFile))
+  RabbitVCSSvn(["diff", currFile], path.dirname(currFile))
 
 log = (currFile)->
   currpath = if currFile then currFile else "."
-  RabbitCSVSvn(["log", currpath], path.dirname(currFile))
+  RabbitVCSSvn(["log", currpath], path.dirname(currFile))
 
 revert = (currFile)->
-  RabbitCSVSvn(["revert", currFile], path.dirname(currFile))
+  RabbitVCSSvn(["revert", currFile], path.dirname(currFile))
 
 update = (currFile)->
-  RabbitCSVSvn(["update", currFile], path.dirname(currFile))
+  RabbitVCSSvn(["update", currFile], path.dirname(currFile))
+
+add = (currFile)->
+  RabbitVCSSvn(["add", currFile], path.dirname(currFile))
+
+rename = (currFile)->
+  RabbitVCSSvn(["rename", currFile], path.dirname(currFile))
 
 module.exports = SVN =
   config:
@@ -82,9 +88,14 @@ module.exports = SVN =
     atom.commands.add "atom-workspace", "SVN:revertFromTreeView": => @revertFromTreeView()
     atom.commands.add "atom-workspace", "SVN:revertFromEditor": => @revertFromEditor()
 
+    atom.commands.add "atom-workspace", "SVN:addFromTreeView": => @addFromTreeView()
+    atom.commands.add "atom-workspace", "SVN:addFromEditor": => @addFromEditor()
+
     atom.commands.add "atom-workspace", "SVN:updateFromTreeView": => @updateFromTreeView()
     atom.commands.add "atom-workspace", "SVN:updateFromEditor": => @updateFromEditor()
 
+    atom.commands.add "atom-workspace", "SVN:renameFromTreeView": => @renameFromTreeView()
+    atom.commands.add "atom-workspace", "SVN:renameFromEditor": => @renameFromEditor()
   #blameFromTreeView: ->
   #  currFile = resolveTreeSelection()
   #  blame(currFile) if currFile?
@@ -124,6 +135,22 @@ module.exports = SVN =
   revertFromEditor: ->
     currFile = resolveEditorFile()
     revert(currFile) if currFile?
+
+  addFromTreeView: ->
+    currFile = resolveTreeSelection()
+    add(currFile) if currFile?
+
+  addFromEditor: ->
+    currFile = resolveEditorFile()
+    add(currFile) if currFile?
+
+  renameFromTreeView: ->
+    currFile = resolveTreeSelection()
+    rename(currFile) if currFile?
+
+  renameFromEditor: ->
+    currFile = resolveEditorFile()
+    rename(currFile) if currFile?
 
   updateFromTreeView: ->
     currFile = resolveTreeSelection()

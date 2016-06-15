@@ -5,6 +5,10 @@
       "label": "SVN"
       "submenu": [
         {
+          "label": "Add"
+          "command": "SVN:addFromEditor"
+        }
+        {
           "label": "Commit"
           "command": "SVN:commitFromEditor"
         }
@@ -21,6 +25,10 @@
           "command": "SVN:revertFromEditor"
         }
         {
+          "label": "Rename"
+          "command": "SVN:renameFromEditor"
+        }
+        {
           "label": "Update"
           "command": "SVN:updateFromEditor"
         }
@@ -31,6 +39,10 @@
     {
       "label": "SVN",
       "submenu": [
+        {
+          "label": "Add"
+          "command": "SVN:addFromTreeView"
+        }
         {
           "label": "Commit"
           "command": "SVN:commitFromTreeView"
@@ -48,6 +60,10 @@
           "command": "SVN:revertFromTreeView"
         }
         {
+          "label": "Rename"
+          "command": "SVN:renameFromTreeView"
+        }
+        {
           "label": "Update"
           "command": "SVN:updateFromTreeView"
         }
@@ -60,6 +76,10 @@
     "submenu": [
       "label": "SVN"
       "submenu": [
+        {
+          "label": "Add"
+          "command": "SVN:addFromEditor"
+        }
         {
           "label": "Commit"
           "command": "SVN:commitFromEditor"
@@ -75,6 +95,10 @@
         {
           "label": "Revert"
           "command": "SVN:revertFromEditor"
+        }
+        {
+          "label": "Rename"
+          "command": "SVN:renameFromEditor"
         }
         {
           "label": "Update"
