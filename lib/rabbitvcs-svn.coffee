@@ -32,10 +32,7 @@ resolveEditorFile = ->
   file?.path
 
 blame = (currFile)->
-  args = [ "blame", currFile ]
-  #args.push("/startrev:1", "/endrev:-1") if atom.config.get("SVN.tortoiseBlameAll")
-  #Not Yet Working
-  #RabbitVCSSvn(args, path.dirname(currFile))
+  RabbitVCSSvn(["annotate", currFile], path.dirname(currFile))
 
 commit = (currFile)->
   RabbitVCSSvn(["commit", currFile], path.dirname(currFile))
@@ -73,8 +70,8 @@ module.exports = SVN =
       default: true
 
   activate: (state) ->
-    #atom.commands.add "atom-workspace", "SVN:blameFromTreeView": => @blameFromTreeView()
-    #atom.commands.add "atom-workspace", "SVN:blameFromEditor": => @blameFromEditor()
+    atom.commands.add "atom-workspace", "SVN:blameFromTreeView": => @blameFromTreeView()
+    atom.commands.add "atom-workspace", "SVN:blameFromEditor": => @blameFromEditor()
 
     atom.commands.add "atom-workspace", "SVN:commitFromTreeView": => @commitFromTreeView()
     atom.commands.add "atom-workspace", "SVN:commitFromEditor": => @commitFromEditor()
@@ -96,13 +93,13 @@ module.exports = SVN =
 
     atom.commands.add "atom-workspace", "SVN:renameFromTreeView": => @renameFromTreeView()
     atom.commands.add "atom-workspace", "SVN:renameFromEditor": => @renameFromEditor()
-  #blameFromTreeView: ->
-  #  currFile = resolveTreeSelection()
-  #  blame(currFile) if currFile?
+  blameFromTreeView: ->
+    currFile = resolveTreeSelection()
+    blame(currFile) if currFile?
 
-  #blameFromEditor: ->
-  #  currFile = resolveEditorFile()
-  #  blame(currFile) if currFile?
+  blameFromEditor: ->
+    currFile = resolveEditorFile()
+    blame(currFile) if currFile?
 
   commitFromTreeView: ->
     currFile = resolveTreeSelection()
