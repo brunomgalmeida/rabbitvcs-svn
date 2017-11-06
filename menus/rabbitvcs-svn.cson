@@ -17,6 +17,10 @@
           "command": "SVN:commitFromEditor"
         }
         {
+          "label": "Commit project"
+          "command": "SVN:commitProject"
+        }
+        {
           "label": "Diff"
           "command": "SVN:diffFromEditor"
         }
@@ -35,6 +39,10 @@
         {
           "label": "Update"
           "command": "SVN:updateFromEditor"
+        }
+        {
+          "label": "Update project"
+          "command": "SVN:updateProject"
         }
       ]
     }
@@ -56,6 +64,10 @@
           "command": "SVN:commitFromTreeView"
         }
         {
+          "label": "Commit project"
+          "command": "SVN:commitProject"
+        }
+        {
           "label": "Diff"
           "command": "SVN:diffFromTreeView"
         }
@@ -74,6 +86,10 @@
         {
           "label": "Update"
           "command": "SVN:updateFromTreeView"
+        }
+        {
+          "label": "Update project"
+          "command": "SVN:updateProject"
         }
       ]
     }
@@ -97,6 +113,10 @@
           "command": "SVN:commitFromEditor"
         }
         {
+          "label": "Commit project"
+          "command": "SVN:commitProject"
+        }
+        {
           "label": "Diff"
           "command": "SVN:diffFromEditor"
         }
@@ -115,6 +135,10 @@
         {
           "label": "Update"
           "command": "SVN:updateFromEditor"
+        }
+        {
+          "label": "Update project"
+          "command": "SVN:updateProject"
         }
       ]
     ]

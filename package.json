@@ -9,6 +9,7 @@
       "SVN:blameFromEditor",
       "SVN:commitFromTreeView",
       "SVN:commitFromEditor",
+      "SVN:commitProject",
       "SVN:diffFromTreeView",
       "SVN:diffFromEditor",
       "SVN:logFromTreeView",
@@ -20,7 +21,8 @@
       "SVN:renameFromTreeView",
       "SVN:renameFromEditor",
       "SVN:updateFromTreeView",
-      "SVN:updateFromEditor"
+      "SVN:updateFromEditor",
+      "SVN:updateProject"
     ]
   },
   "repository": "https://github.com/brunomgalmeida/rabbitvcs-svn",
