@@ -9,6 +9,10 @@
           "command": "SVN:addFromEditor"
         }
         {
+          "label": "Blame"
+          "command": "SVN:blameFromEditor"
+        }
+        {
           "label": "Commit"
           "command": "SVN:commitFromEditor"
         }
@@ -42,6 +46,10 @@
         {
           "label": "Add"
           "command": "SVN:addFromTreeView"
+        }
+        {
+          "label": "Blame"
+          "command": "SVN:blameFromTreeView"
         }
         {
           "label": "Commit"
@@ -79,6 +87,10 @@
         {
           "label": "Add"
           "command": "SVN:addFromEditor"
+        }
+        {
+          "label": "Blame"
+          "command": "SVN:blameFromEditor"
         }
         {
           "label": "Commit"

@@ -9,6 +9,7 @@
 # https://atom.io/docs/latest/advanced/keymaps
 
 #"atom-text-editor":
+#  "alt-b": "SVN:blameFromEditor"
 #  "alt-c": "SVN:commitFromEditor"
 #  "alt-d": "SVN:diffFromEditor"
 #  "alt-l": "SVN:logFromEditor"
